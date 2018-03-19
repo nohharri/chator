@@ -11,6 +11,7 @@ import RegisterView from './components/RegisterView';
 import ProtectedView from './components/ProtectedView';
 import Analytics from './components/Analytics';
 import NotFound from './components/NotFound';
+import TestView from './components/Test';
 
 import { DetermineAuth } from './components/DetermineAuth';
 import { requireAuthentication } from './components/AuthenticatedComponent';
@@ -24,5 +25,6 @@ export default (
         <Route path="home" component={requireNoAuthentication(HomeContainer)} />
         <Route path="analytics" component={requireAuthentication(Analytics)} />
         <Route path="*" component={DetermineAuth(NotFound)} />
+        <Route path="test" component={TestView} />
     </Route>
 );
